@@ -1,16 +1,9 @@
 import {
-  Backdrop,
-  BakeShadows,
-  Float,
   MeshReflectorMaterial,
-  OrbitControls,
   PresentationControls,
   Stage,
-  useGLTF,
 } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import Chair from "./Chair";
-import Shoe from "./Shoe";
 
 const Experience = () => {
   return (
@@ -24,7 +17,7 @@ const Experience = () => {
         <Stage environment="city" intensity={0.6} castShadow={false}>
           <Chair />
         </Stage>
-        <mesh rotation={[-Math.PI / 2, 0, 0]}>
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-2}>
           <planeGeometry args={[170, 170]} />
           <MeshReflectorMaterial
             blur={[300, 100]}
